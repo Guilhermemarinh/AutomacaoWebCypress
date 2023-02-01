@@ -1,0 +1,22 @@
+{
+  "name": "cypress_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "./node_modules/.bin/cypress open",
+    "cypress:run": "./node_modules/.bin/cypress run",
+    "cy:run": "npx cypress run --env allure=true",
+    "allure:generate":"allure generate allure-results",
+    "allure:open":"allure open allure-report",
+    "allure:clear":"rd /s /q allure-results allure-report",
+    "test":"npx npm-run-all allure:clear cy:run allure:generate"
+  },
+  "keywords": [],
+  "author": "Guilherme Marinho",
+  "license": "ISC",
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.26.2",
+    "cypress": "^9.4.1"
+  }
+}
